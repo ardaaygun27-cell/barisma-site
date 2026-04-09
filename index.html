@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Barışalım ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #ff4d6d;
+    }
+    textarea {
+      width: 90%;
+      height: 100px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+    .memories {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .memory {
+      background: #ffe5ec;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Barışalım ❤️</h1>
+
+  <p id="specialMessage">
+    Seni gerçekten çok özledim... Hatalarımı anladım ve telafi etmek istiyorum. 💔
+  </p>
+
+  <h3>Anılarımız</h3>
+
+  <textarea id="memoryInput" placeholder="Bir anı yaz..."></textarea>
+  <br>
+  <button onclick="addMemory()">Ekle</button>
+
+  <div class="memories" id="memoriesList"></div>
+</div>
+
+<script>
+  function addMemory() {
+    const input = document.getElementById("memoryInput");
+    const text = input.value.trim();
+
+    if (text === "") return;
+
+    const div = document.createElement("div");
+    div.className = "memory";
+    div.innerText = text;
+
+    document.getElementById("memoriesList").appendChild(div);
+    input.value = "";
+  }
+</script>
+
+</body>
+</html>
